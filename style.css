@@ -1,0 +1,191 @@
+/* This applies to every element in the html */
+html * 
+{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0; /*Remove the margin */
+}
+
+/* TYPOGRAPHY */
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+h1{
+    font-size: 60px; /* Make it large */
+    font-weight: 300; /* Make it thin */
+
+}
+{
+    font-size: 18px;
+    line-height: 1.7;
+}
+a{
+    color: #000; /* Make it black */
+    text-decoration: none; /* No underline */
+}
+
+a.button {
+    display: inline-block;  /*Make it a box */
+    background: #DBA380; /* Background color of the button */
+    height: 60px;
+    font-size: 16px;
+    color: #ffffff; /*White text color */
+    padding: 20px 40px; /* 20px top and bottom.40px left and right */
+    position: relative;
+}p
+
+/* NEW: Pseudo-elements in CSS */
+/* Pseudo-elements are decorative elements that we can create through CSS without  changing the HTML */
+a.button::after{
+    content: ''; /* Leave it empty */
+    display: block; /*Make it a box */
+    height: 1px; /* 1 px height */
+    width: 80px; /* 80px wide */
+    background: #000; /* Make it black */
+    position: absolute;
+    top: 50%; /* 50% from the top of the parent box */
+    right: -60px; /*Make it overlap the right edge */
+
+}
+
+/* HEADER */
+
+header {
+    /* posa */
+    position: absolute;
+    display: flex;
+    /* jcsb */
+    justify-content: space-between;
+
+    max-width: 1200px;/*Constrain it to 1200px */
+    width: 100%;
+    padding: 40px 0; /* Adjust the padding.40px top and bottom. 0 left and right */
+    /* Center it perfectly on the page */
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+header nav
+{
+    width: 70%;
+}
+header nav ul {
+    display:flex;
+    list-style: none;  /* The dots are gone*/
+    margin: 0; /* remove the  margin */
+}
+
+header nav ul li {
+    font-size: 16px; /*Adjust the font size */
+    font-weight: bold;
+    padding: 0 20px; /* No padding top and bottom.Padding on the right and left */
+    position: relative;
+
+}
+
+/*Create a pseudo element */
+header nav ul li.active::after {
+    content: ''; /*make it empty */
+    display: block ; /*make it a box */
+    position: absolute; /*I position it */
+    bottom: -10px; /*put it at the bottom */
+    left: calc(50%-10px); /* perfectly center it with a calculation*/
+    height: 1px; /*make it thin */
+    width: 20px; /*very thin*/
+    background: #DBA380; /* color it :) */
+}
+
+/*CONTENT*/
+section.hero{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(90deg,white 40%, transparent),
+    url('./brooke-lark-158017-unsplash.jpg' );
+    /* Just do it */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    /* padding: 0 100px; We do not need this anymore */
+}
+section.hero div.container{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto ; /*Make it centered */
+}
+section.hero div.content {
+    width: 50%;
+
+
+}
+section.hero button {
+    background: #DBA380;
+    color: white;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: none; /* Border No */
+    /* box-shadow: x y blur color ; */
+    box-shadow: 15px 15px 50px rgba(0,0,0,0.2);
+    margin-top: 50px; /* Add space on the top */
+    position: relative;
+}
+
+/* Create a  small line with a pseudo element :) */
+section.hero button::after {
+    content: ''; /* Leave it empty */
+    display: block; /*Make it a box */
+    height: 1px; /* 1 px height */
+    width: 80px; /* 80px wide */
+    background: #000; /* Make it black */
+    position: absolute;
+    top: 50%; /* 50% from the top of the parent box */
+    right: -100px; /*Make it overlap the right edge */
+}
+
+section.intro {
+    /* padding: 0 100px; We do not need this anymore */
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+section.intro nav ul {
+    display: flex;
+    justify-content: space-between; /* Space the elements evenly */
+    list-style: none; /* Remove the dots  from the list */
+    padding: 0; /* Remove the padding from the list */
+    margin-top: -75px; /* Pull it up */
+}
+section.intro nav ul li {
+    background: white;
+    padding: 8%;
+    /* box-shadow : x y blur color */
+    box-shadow: 0px 10px 50px rgba(0,0,0,0.2);
+}
+section.intro nav ul li img {
+    height: 64px;
+    margin-bottom: 16px;
+}
+
+section.intro nav ul li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold; 
+}
+
+section.intro div {
+    /* The element has a maximum width of 580px but it never goes wider. If the screen is smaller it shrinks*/
+    max-width: 580px;
+    /* Add space on the top and bottom.And automatically space it evenly on the sides */
+    margin: 200px auto;
+    /* Center the text  alignment */
+    text-align: center;
+}
